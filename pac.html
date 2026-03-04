@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анна Пасхалова — хранительница народной памяти</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #3e4d3b;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #efe8da;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fcf9f2;
+            color: #2e3a2b;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(40, 55, 30, 0.7);
+            overflow: hidden;
+            border: 1px solid #bbaa8e;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* верхняя полоса — этнографический орнамент */
+        .top-stripe {
+            background: #6e5c45;
+            padding: 0.8rem 2rem;
+            color: #f5efde;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #cfb38b;
+            animation: weavePattern 6s infinite;
+        }
+
+        @keyframes weavePattern {
+            0% { background-color: #6e5c45; }
+            50% { background-color: #887456; }
+            100% { background-color: #6e5c45; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+        /* шапка страницы */
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 3.8rem;
+            font-weight: 600;
+            color: #5b4c34;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #e2dac8;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #d1c5af;
+        }
+
+        .subtit名 {
+            font-size: 1.5rem;
+            color: #826b48;
+            font-style: italic;
+            border-bottom: 2px solid #dbcbb2;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* блок с фото и основной инфо */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #efe0cf;
+            border-radius: 40px 10px 40px 10px;
+            box-shadow: 16px 16px 0 #8f7a5f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: #5b4a33;
+            border: 2px dashed #bda07e;
+            min-height: 340px;
+            transition: all 0.4s;
+            animation: floatScroll 5s infinite ease-in-out;
+        }
+
+        @keyframes floatScroll {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 20px 20px 0 #6d5c46; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(0.5deg);
+            border-color: #b6895c;
+            box-shadow: 20px 20px 0 #5f4f3b;
+        }
+
+        .photo-placeholder span {
+            font-size: 5rem;
+            opacity: 0.7;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
+            animation: quillWriting 5s infinite alternate;
+        }
+
+        @keyframes quillWriting {
+            0% { transform: rotate(-5deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        .photo-placeholder p {
+            background: #fcf3e6;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #6e553b;
+            border: 1px solid #b39272;
+            margin-top: 1rem;
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #f5efe4;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #9c835f;
+            box-shadow: inset 0 2px 8px #f3e7d6, 0 10px 15px -12px #4f4233;
+            animation: slideInRight 1.3s;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #6f593d;
+            border-bottom: 2px dotted #cfb99a;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '✧';
+            position: absolute;
+            bottom: -5px;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            animation: slideOrnament 3s infinite;
+        }
+
+        @keyframes slideOrnament {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0d0ba;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(150, 120, 80, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 170px;
+            color: #6b543b;
+        }
+
+        .info-value {
+            color: #463e32;
+        }
+
+        .collector-badge {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #7f613f;
+            border: 2px solid #b28c64;
+            box-shadow: 0 4px 6px #eadbc8;
+            animation: gentlePulse 3s infinite;
+        }
+
+        @keyframes gentlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #fbf3e7; }
+            100% { transform: scale(1); }
+        }
+
+        /* цитата о собирательстве */
+        .quote-block {
+            background: #efe2d2;
+            padding: 2rem 3rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2.5rem 0;
+            color: #4d3e2b;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #bb9d7e;
+            box-shadow: 0 10px 18px #cbb295;
+            position: relative;
+            animation: zoomIn 1.5s;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "«";
+            font-size: 5rem;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+            color: #c3a27e;
+            opacity: 0.4;
+            animation: fadeQuote 3s infinite alternate;
+        }
+
+        @keyframes fadeQuote {
+            from { opacity: 0.2; transform: scale(1); }
+            to { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            color: #7b644b;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* две колонки — биография и творчество */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #f7f0e4;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #cfb99b;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #947d62;
+            border-color: #b5906b;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #7d6244;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #b28c64;
+            padding-left: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #4d4236;
+        }
+
+        .works-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .works-list li {
+            padding: 0.4rem 0 0.4rem 2rem;
+            position: relative;
+            color: #5f4d38;
+            transition: transform 0.2s;
+        }
+
+        .works-list li:hover {
+            transform: translateX(5px);
+            color: #886842;
+        }
+
+        .works-list li::before {
+            content: "✎";
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: 0.2rem;
+            color: #a4794f;
+        }
+
+        /* сотрудничество с Костомаровым */
+        .collab-box {
+            background: #cfbea9;
+            padding: 2rem 2.5rem;
+            border-radius: 30px 80px 30px 80px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+            border: 1px solid #a68b6e;
+            color: #2d271f;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .collab-box:hover {
+            background: #beaa92;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #6e5d4b;
+        }
+
+        .collab-box h3 {
+            color: #4d3a26;
+            font-size: 2rem;
+            border-bottom: 2px solid #e4caa9;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            background: #faf0dd;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #5a402b;
+            font-weight: 500;
+        }
+
+        /* главный труд — сборник песен */
+        .main-work {
+            background: #eadbc8;
+            padding: 1.8rem 2.5rem;
+            border-radius: 20px 80px 20px 80px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #b29273;
+            animation: rotateIn 1.6s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-0.5deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .main-work:hover {
+            background: #ddcbb6;
+            border-color: #9e7b5b;
+        }
+
+        .main-work h3 {
+            font-size: 2rem;
+            color: #5e452f;
+            display: inline-block;
+            border-bottom: 3px solid #b48e66;
+        }
+
+        .book-highlight {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #6d4c2b;
+            text-align: center;
+            margin: 1.5rem 0;
+            background: #f7ecdc;
+            padding: 1rem;
+            border-radius: 60px;
+        }
+
+        /* вклад в этнографию */
+        .legacy-box {
+            background: #dac9b5;
+            padding: 1.8rem 2.5rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #a68868;
+        }
+
+        .legacy-box h3 {
+            font-size: 2rem;
+            color: #4f3b26;
+        }
+
+        .ethnography-list {
+            columns: 2;
+            margin-top: 1.2rem;
+        }
+
+        .ethnography-list div {
+            padding: 0.3rem 0;
+            font-style: italic;
+        }
+
+        /* память в Саратове */
+        .memory {
+            background: #b6a085;
+            color: #231d15;
+            padding: 1.2rem 2rem;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            border-left: 8px solid #4a3c2c;
+        }
+
+        /* ссылка назад */
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #d0bdab;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #2d231b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #8e755b;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: bounceGentle 3s infinite;
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #bea790;
+            border-color: #6b543b;
+            color: #1e1610;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #917b64;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9f8a74;
+            margin-top: 2rem;
+            border-top: 1px dashed #c5af97;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 2.8rem; }
+            .ethnography-list { columns: 1; }
+        }
+
+        /* специально для фото - исправленный блок */
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 40px 10px 40px 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ✦ СОБИРАТЕЛЬНИЦА РУССКОЙ ДУШИ ✦ ЭТНОГРАФИЯ ✦ САРАТОВ ✦
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Анна Пасхалова</h1>
+                <div class="subtit名">(Мордовцева) — писательница, фольклорист</div>
+            </div>
+
+           
+            <div class="hero-section">
+                
+                <div class="photo-placeholder" style="padding: 0; overflow: hidden; background: #8f7a5f; display: flex; align-items: center; justify-content: center;">
+                    <img src= "IMG_20260304_212652.png" alt="Анна Пасхалова" style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 40px 10px 40px 10px; display: block;">
+                    
+                </div>
+
+                <div class="quick-info">
+                    <h2>хранительница фольклора</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Анна Никаноровна Пасхалова (Мордовцева)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">1823 — 21 декабря 1885</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Псевдоним</span>
+                        <span class="info-value">А. Б-цъ</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Род занятий</span>
+                        <span class="info-value">писательница, этнограф, собирательница</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Главный труд</span>
+                        <span class="info-value">«Былины и песни, записанные в Саратове»</span>
+                    </div>
+                    <div class="collector-badge">
+                        ✦ основательница саратовской этнографии ✦
+                    </div>
+                </div>
+            </div>
+
+            <!-- цитата о значении её работы -->
+            <div class="quote-block">
+                «Немало сделала для развития этнографического движения в Саратове и губернии. Ею составлены и изданы былины и песни...»
+                <div class="quote-author">— из исторических хроник</div>
+            </div>
+
+            <!-- две колонки: биография и вклад -->
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизненный путь</h3>
+                    <p>Анна Никаноровна родилась в 1823 году. С молодости увлекалась литературой и народным творчеством. В 1842 году начала публиковаться под псевдонимом <strong>А. Б-цъ</strong>.</p>
+                    <p>Живя в Саратове, она объездила множество сёл, записывая былины, обрядовые песни, плачи. Её дом стал центром притяжения для интеллигенции, интересующейся народной культурой.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>главные труды</h3>
+                    <ul class="works-list">
+                        <li>«Былины и песни, записанные в Саратове»</li>
+                        <li>«Русские народные песни, собранные в Саратовской губернии» (совместно с Н.И. Костомаровым)</li>
+                        <li>многочисленные очерки и публикации в периодике</li>
+                    </ul>
+                    <p style="margin-top: 1rem;">Её записи отличаются исключительной точностью — она стремилась сохранить не только текст, но и манеру исполнения.</p>
+                </div>
+            </div>
+
+            <!-- сотрудничество с Костомаровым -->
+            <div class="collab-box">
+                <h3>📜 в соавторстве с историком</h3>
+                <p>Совместно с выдающимся историком <span class="highlight">Николаем Ивановичем Костомаровым</span> Анна Пасхалова подготовила фундаментальный сборник <strong>«Русские народные песни, собранные в Саратовской губернии»</strong>. Этот труд стал важнейшим источником для изучения фольклора Поволжья.</p>
+                <p style="margin-top: 1rem;">Костомаров высоко ценил её чутьё и преданность народной культуре, называл "неутомимой искательницей жемчужин".</p>
+            </div>
+
+            <!-- главная книга -->
+            <div class="main-work">
+                <h3>★ былины и песни Саратова</h3>
+                <div class="book-highlight">
+                    «Былины и песни, записанные в Саратове»
+                </div>
+                <p>Книга, вышедшая в 1860-х годах, включала уникальные записи былин об Илье Муромце, Добрыне, исторические песни о Разине, свадебные обряды. Многие тексты сохранились только благодаря Паскаловой.</p>
+                <p style="margin-top: 0.8rem;"><em>Современные фольклористы до сих пор обращаются к её собранию как к эталону полевой работы.</em></p>
+            </div>
+
+            <!-- вклад в этнографию -->
+            <div class="legacy-box">
+                <h3>🌾 значение для науки</h3>
+                <div class="ethnography-list">
+                    <div>• первая системная запись былин в регионе</div>
+                    <div>• сохранение песенной традиции</div>
+                    <div>• развитие краеведения</div>
+                    <div>• воспитание интереса к фольклору</div>
+                </div>
+            </div>
+
+            <!-- память -->
+            <div class="memory">
+                <p><strong>🕯 память:</strong> Анна Никаноровна Пасхалова умерла 21 декабря 1885 года в Саратове. Похоронена на старом кладбище. Её имя вписано в историю русской этнографии как имя первопроходца, открывшего миру богатство саратовского фольклора. Материалы Паскаловой хранятся в архивах и используются исследователями по сей день.</p>
+            </div>
+
+            <!-- ссылка на главную -->
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>✎ собранные ею песни не умолкают • саратовская этнография • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

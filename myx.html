@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентина Мухина-Петринская — романтик с берегов Волги</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2d4a3b;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #eef3e5;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fefcf7;
+            color: #263f2e;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(20, 45, 30, 0.7);
+            overflow: hidden;
+            border: 1px solid #9bb89b;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .top-stripe {
+            background: #4d6b55;
+            padding: 0.8rem 2rem;
+            color: #f1f7da;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #bc9e6b;
+            animation: parchmentGlow 5s infinite;
+        }
+
+        @keyframes parchmentGlow {
+            0% { background-color: #4d6b55; }
+            50% { background-color: #5c7f64; }
+            100% { background-color: #4d6b55; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+  
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 3.8rem;
+            font-weight: 600;
+            color: #2d5a44;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #d9e3cf;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #c4d7bc;
+        }
+
+        .subtit名 {
+            font-size: 1.5rem;
+            color: #4f8065;
+            font-style: italic;
+            border-bottom: 2px solid #bdd0b5;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+   
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #e2efdd;
+            border-radius: 40px 10px 40px 10px;
+            box-shadow: 16px 16px 0 #618b6f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: #2b6b49;
+            border: 2px dashed #8ab38a;
+            min-height: 340px;
+            transition: all 0.4s;
+            animation: floatBook 5s infinite ease-in-out;
+        }
+
+        @keyframes floatBook {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 20px 20px 0 #3d6f4f; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(1deg);
+            border-color: #5d9f6f;
+            box-shadow: 20px 20px 0 #2e6040;
+        }
+
+        .photo-placeholder span {
+            font-size: 5rem;
+            opacity: 0.7;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
+            animation: openBook 6s infinite alternate;
+        }
+
+        @keyframes openBook {
+            0% { transform: rotate(0deg) scale(1); }
+            100% { transform: rotate(5deg) scale(1.05); }
+        }
+
+        .photo-placeholder p {
+            background: #f2fae9;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #266145;
+            border: 1px solid #85af85;
+            margin-top: 1rem;
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #f4fcf0;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #4f9b6b;
+            box-shadow: inset 0 2px 8px #e7f5de, 0 10px 15px -12px #1b462a;
+            animation: slideInRight 1.3s;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #266145;
+            border-bottom: 2px dotted #b1d4b1;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #4f9b6b;
+            animation: slideLine 2.5s infinite;
+        }
+
+        @keyframes slideLine {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #dae9d4;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(70, 140, 100, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 170px;
+            color: #1d5c3d;
+        }
+
+        .info-value {
+            color: #1f4233;
+        }
+
+        .theme-badge {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #1f7042;
+            border: 2px solid #5fa870;
+            box-shadow: 0 4px 6px #d2ebcc;
+            animation: gentlePulse 3s infinite;
+        }
+
+        @keyframes gentlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #f3fff0; }
+            100% { transform: scale(1); }
+        }
+
+        .quote-block {
+            background: #e1f0de;
+            padding: 2rem 3rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2.5rem 0;
+            color: #174d2b;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #84b084;
+            box-shadow: 0 10px 18px #a1c6a1;
+            position: relative;
+            animation: zoomIn 1.5s;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "✧";
+            font-size: 5rem;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+            color: #dbb168;
+            opacity: 0.4;
+            animation: twinkle 3s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.2; transform: scale(1); }
+            to { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            color: #3f7853;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #f3fcf0;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #b9d7b2;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #5d8f6e;
+            border-color: #7fb17f;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #1f7042;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #5fa870;
+            padding-left: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #1e402f;
+        }
+
+        .book-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .book-list li {
+            padding: 0.4rem 0 0.4rem 2rem;
+            position: relative;
+            color: #174d2b;
+            transition: transform 0.2s;
+        }
+
+        .book-list li:hover {
+            transform: translateX(5px);
+            color: #106b36;
+        }
+
+        .book-list li::before {
+            content: "📖";
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+      
+        .world-box {
+            background: #cbe3cb;
+            padding: 2rem 2.5rem;
+            border-radius: 30px 80px 30px 80px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+            border: 1px solid #7aad7a;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .world-box:hover {
+            background: #b9ddb9;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #477a57;
+        }
+
+        .world-box h3 {
+            color: #0a4724;
+            font-size: 2rem;
+            border-bottom: 2px solid #bb9b5e;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .world-box p {
+            color: #04331b;
+        }
+
+        .highlight {
+            background: #fffbdc;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #2f6b41;
+            font-weight: 500;
+        }
+
+      
+        .main-books {
+            background: #e2f0de;
+            padding: 1.8rem 2.5rem;
+            border-radius: 20px 60px 20px 60px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #79a879;
+            animation: rotateIn 1.6s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-0.5deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .main-books:hover {
+            background: #d4ecce;
+            border-color: #519b5e;
+        }
+
+        .main-books h3 {
+            font-size: 2rem;
+            color: #115f30;
+            display: inline-block;
+            border-bottom: 3px solid #679f67;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .book-item {
+            background: #f9fff5;
+            border-radius: 30px;
+            padding: 0.8rem 1.2rem;
+            text-align: center;
+            border: 1px solid #96bb8e;
+            transition: 0.3s;
+        }
+
+        .book-item:hover {
+            background: #daf0ce;
+            transform: scale(1.03);
+            border-color: #3e864e;
+        }
+
+        .book-title {
+            font-weight: 700;
+            color: #135e32;
+        }
+
+      
+        .roots {
+            background: #bdd9bd;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            margin: 1.5rem 0;
+            border: 1px solid #67925b;
+        }
+
+     
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #c3dec0;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #0f371f;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #5d946d;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: gentleBounce 3s infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #abd1a8;
+            border-color: #266f3a;
+            color: #052012;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #417a51;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #779e77;
+            margin-top: 2rem;
+            border-top: 1px dashed #9abe9a;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ✧ РОМАНТИЧЕСКИЙ РЕАЛИЗМ ✧ ДЕТСКАЯ ЛИТЕРАТУРА ✧
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Валентина Мухина-Петринская</h1>
+                <div class="subtit名">писатель, открывающий миры</div>
+            </div>
+
+          
+            <div class="hero-section">
+               <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
+                    <img src= "IMG_20260304_211526.png" alt="Лидия Русланова" 
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px 10px 30px 10px;">
+                    <p style="font-size: 0.8rem; background: transparent; border: none;">(1909–1993)</p>
+                </div>
+
+                <div class="quick-info">
+                    <h2>летописец детства</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Валентина Михайловна Мухина-Петринская</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">7 февраля 1909 — 5 июня 1993</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Направление</span>
+                        <span class="info-value">романтический реализм</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Герои</span>
+                        <span class="info-value">романтики, исследователи, мечтатели</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Место в литературе</span>
+                        <span class="info-value">классик советской детской прозы</span>
+                    </div>
+                    <div class="theme-badge">
+                        ✦ против лжи и лицемерия ✦
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="quote-block">
+                «Её герои — честные и справедливые романтики, непримиримые к проявлениям лицемерия, лжи и подлости, целеустремлённо идут к постижению тайн науки и природы.»
+                <div class="quote-author">— из литературной энциклопедии</div>
+            </div>
+
+       
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизненный путь</h3>
+                    <p>Родилась в Саратове. С детства любила книги и природу. Работала учительницей, затем журналистом. Первые рассказы опубликовала в конце 1930-х годов.</p>
+                    <p>Война и послевоенные годы сформировали её как писателя, глубоко понимающего детскую душу. Мухина-Петринская создала десятки повестей и рассказов, которые воспитывали поколения.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>саратовские корни</h3>
+                    <p>Волга, степи, люди Саратовского края — всё это отразилось в её книгах. Здесь она черпала вдохновение, отсюда уходили в плавание её герои.</p>
+                    <ul class="book-list">
+                        <li>повесть «Корабли Санди»</li>
+                        <li>«Встреча с неведомым»</li>
+                        <li>«Обсерватория в дюнах»</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="world-box">
+                <h3>✦ романтический реализм ✦</h3>
+                <p>Мухина-Петринская создала уникальное направление в детской литературе. Её герои — <span class="highlight">честные, справедливые романтики</span>, которые не терпят лжи и подлости. Они исследуют мир, стремятся к научным открытиям, защищают слабых. Их целеустремлённость и чистота помыслов становились примером для тысяч юных читателей.</p>
+                <p style="margin-top: 1rem;">«Книги должны воспитывать сердце, — говорила писательница. — Если ребёнок не научится мечтать, он не вырастет настоящим человеком».</p>
+            </div>
+
+            
+            <div class="main-books">
+                <h3>избранные произведения</h3>
+                <div class="book-grid">
+                    <div class="book-item">
+                        <span class="book-title">«Корабли Санди»</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">«Встреча с неведомым»</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">«Обсерватория в дюнах»</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">«Смотрящие вперёд»</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">«Дом на берегу»</span>
+                    </div>
+                    <div class="book-item">
+                        <span class="book-title">«Тайна белого камня»</span>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="roots">
+                <p style="font-size: 1.2rem;"><strong>🌿 наследие:</strong> Книги Валентины Мухиной-Петринской переиздаются до сих пор. В Саратове её имя носит одна из библиотек. Тысячи читателей благодарны ей за мир, полный романтики и добра.</p>
+            </div>
+
+            
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>✧ каждое слово — как семя добра • саратовская романтика • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

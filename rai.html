@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раиса Аронова — ночная ведьма</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f1a1f;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #e3e7e9;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #f2f4f8;
+            color: #1e2b32;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(0,20,30,0.8);
+            overflow: hidden;
+            border: 1px solid #7a8f9c;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+
+        .top-stripe {
+            background: #1e3d4a;
+            padding: 0.8rem 2rem;
+            color: #e0eff5;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #7f9fb5;
+            animation: flicker 4s infinite;
+        }
+
+        @keyframes flicker {
+            0% { background-color: #1e3d4a; }
+            50% { background-color: #235466; }
+            100% { background-color: #1e3d4a; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #103845;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #b6ccd9;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #a0bccd;
+        }
+
+        .subtit名 {
+            font-size: 1.5rem;
+            color: #2b6479;
+            font-style: italic;
+            border-bottom: 2px solid #b0c7d4;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+ 
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #cfdee9;
+            border-radius: 30px 10px 30px 10px;
+            box-shadow: 16px 16px 0 #2e5f73;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: #1a4453;
+            border: 2px dashed #517e94;
+            min-height: 340px;
+            transition: all 0.4s;
+            animation: floatPlane 5s infinite ease-in-out;
+        }
+
+        @keyframes floatPlane {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 20px 20px 0 #1c4d61; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(-1deg);
+            border-color: #2c819e;
+            box-shadow: 20px 20px 0 #123d4d;
+        }
+
+        .photo-placeholder span {
+            font-size: 5rem;
+            opacity: 0.7;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
+            animation: spinPropeller 6s infinite linear;
+        }
+
+        @keyframes spinPropeller {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(8deg); }
+            75% { transform: rotate(-8deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .photo-placeholder p {
+            background: #eef3f7;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #164c5e;
+            border: 1px solid #5d8ea3;
+            margin-top: 1rem;
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #e5f0f5;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #206b84;
+            box-shadow: inset 0 2px 8px #e1f0f7, 0 10px 15px -12px #0a3340;
+            animation: slideInRight 1.3s;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #115267;
+            border-bottom: 2px dotted #8fb5c7;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #206b84;
+            animation: slideLine 2.5s infinite;
+        }
+
+        @keyframes slideLine {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #c6dae4;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(50, 120, 150, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 170px;
+            color: #115267;
+        }
+
+        .info-value {
+            color: #1c3b48;
+        }
+
+        .highlight-badge {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #0e5d77;
+            border: 2px solid #3c819c;
+            box-shadow: 0 4px 6px #c0d9e6;
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #f0faff; }
+            100% { transform: scale(1); }
+        }
+
+
+        .quote-block {
+            background: #d6e6f0;
+            padding: 2rem 3rem;
+            border-radius: 30px 100px 30px 100px;
+            margin: 2.5rem 0;
+            color: #092b36;
+            font-size: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #698ea3;
+            box-shadow: 0 10px 18px #7f9fb0;
+            position: relative;
+            animation: zoomIn 1.5s;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "★";
+            font-size: 5rem;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+            color: #b8865e;
+            opacity: 0.4;
+            animation: spinStar 5s infinite linear;
+        }
+
+        @keyframes spinStar {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            color: #255f74;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+     
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #e9f2f8;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #aac2d0;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #3d6a7f;
+            border-color: #4987a3;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #1a5e78;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #3f7e99;
+            padding-left: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #1b3f4e;
+        }
+
+        .flight-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .flight-list li {
+            padding: 0.3rem 0 0.3rem 2rem;
+            position: relative;
+            color: #123f50;
+            transition: transform 0.2s;
+        }
+
+        .flight-list li:hover {
+            transform: translateX(5px);
+            color: #0a5b77;
+        }
+
+        .flight-list li::before {
+            content: "✈";
+            color: #aa4e2b;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .combat-path {
+            background: #1f4b5c;
+            color: #eef7fc;
+            padding: 2rem 2.5rem;
+            border-radius: 20px 80px 20px 80px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .combat-path:hover {
+            background: #256c83;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #0b313e;
+        }
+
+        .combat-path h3 {
+            color: #ffdead;
+            font-size: 2rem;
+            border-bottom: 2px solid #e1b88b;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #ffdab9;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+  
+        .afterwar-box {
+            background: #deecf3;
+            padding: 1.8rem 2.5rem;
+            border-radius: 80px 20px 80px 20px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #608ea6;
+            animation: rotateIn 1.6s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-0.5deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .afterwar-box:hover {
+            background: #cde2ef;
+            border-color: #357d9c;
+        }
+
+        .afterwar-box h3 {
+            font-size: 2rem;
+            color: #124e65;
+            display: inline-block;
+            border-bottom: 3px solid #4a7e97;
+        }
+
+        .awards {
+            background: #f3f9ff;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            border: 1px solid #a0bed0;
+        }
+
+        .award-item {
+            background: #1e3d4a;
+            color: #fae5c3;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            border: 1px solid #c99f74;
+            transition: 0.2s;
+        }
+
+        .award-item:hover {
+            transform: scale(1.1);
+            background: #235f77;
+        }
+
+      
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #b5cddd;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #0f2d39;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #598196;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #97b8cf;
+            border-color: #266482;
+            color: #031016;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #305e74;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7195a8;
+            margin-top: 2rem;
+            border-top: 1px dashed #95b7cb;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ✦ 46-Й ГВАРДЕЙСКИЙ НОЧНОЙ БОМБАРДИРОВОЧНЫЙ ✦ ТАМАНСКИЙ ✦
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Раиса Аронова</h1>
+                <div class="subtit名">гвардии лейтенант, Герой Советского Союза</div>
+            </div>
+
+           
+            <div class="hero-section">
+                    <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
+                    <img src= "IMG_20260304_210552.png" alt="Лидия Русланова" 
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px 10px 30px 10px;">
+                    <p style="font-size: 0.8rem; background: transparent; border: none;">(1920–1982)</p>
+                </div>
+
+                <div class="quick-info">
+                    <h2>боевой лётчик</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Раиса Ермолаевна Аронова</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">10 февраля 1920 — 20 декабря 1982</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Полк</span>
+                        <span class="info-value">46-й гв. нбап (ночные бомбардировщики)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Боевые вылеты</span>
+                        <span class="info-value"><strong>960</strong> боевых вылетов</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Фронт</span>
+                        <span class="info-value">2-й Белорусский, 4-я воздушная армия</span>
+                    </div>
+                    <div class="highlight-badge">
+                        ★ ГЕРОЙ СОВЕТСКОГО СОЮЗА ★
+                    </div>
+                </div>
+            </div>
+
+      
+            <div class="quote-block">
+                «Ночью мы становились неуязвимыми. Наши маленькие По-2 наводили ужас на врага. Нас прозвали "ночными ведьмами".»
+                <div class="quote-author">— Раиса Аронова</div>
+            </div>
+
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизнь до неба</h3>
+                    <p>Родилась в Саратове в рабочей семье. Окончила школу, затем Саратовский авиационный техникум. Занималась в аэроклубе — с детства мечтала о небе.</p>
+                    <p>В 1940 году поступила в Энгельсскую военную авиационную школу, где под руководством Марины Расковой формировались женские авиаполки. С начала войны — на фронте.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>46-й гвардейский</h3>
+                    <p>Знаменитый женский полк ночных бомбардировщиков. Летали на самолётах По-2 (У-2). Ночью, с выключенными моторами, подходили к целям и сбрасывали бомбы. Немцы прозвали их «ночными ведьмами».</p>
+                    <ul class="flight-list">
+                        <li>старший лётчик</li>
+                        <li>гвардии лейтенант</li>
+                        <li>штурман звена</li>
+                    </ul>
+                </div>
+            </div>
+
+ 
+            <div class="combat-path">
+                <h3>⚡ 960 огненных ночей</h3>
+                <p><span class="stat-number">960</span> боевых вылетов на бомбардировку скоплений врага, переправ, складов, железнодорожных узлов. Экипаж Ароновой уничтожил 3 переправы, 2 склада с боеприпасами, 5 прожекторов, множество живой силы противника.</p>
+                <p style="margin-top: 1rem;">Летала в самых тяжёлых метеоусловиях. Не раз возвращалась на изрешечённой машине. В 1944 году представлена к званию Героя.</p>
+            </div>
+
+
+            <div class="awards">
+                <span class="award-item">Герой Советского Союза</span>
+                <span class="award-item">Орден Ленина</span>
+                <span class="award-item">Орден Красного Знамени</span>
+                <span class="award-item">Орден Отечественной войны II ст.</span>
+                <span class="award-item">медаль «За оборону Кавказа»</span>
+            </div>
+
+            
+            <div class="afterwar-box">
+                <h3>мирное небо</h3>
+                <p>После войны Раиса Аронова осталась в авиации, затем окончила Московский институт иностранных языков. Работала в Советском комитете ветеранов войны, много лет занималась патриотическим воспитанием молодёжи. Написала книгу воспоминаний «Ночные ведьмы».</p>
+                <p style="margin-top: 0.8rem;">Умерла в 1982 году, похоронена в Саратове. Имя Ароновой носит школа в Саратове и одна из улиц города.</p>
+            </div>
+
+   
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>✭ вечная память лётчицам Таманского полка • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ольга Беркут — саратовский Мичурин</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #5e4f3a;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #f5efe2;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fefaf2;
+            color: #3e4a2c;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(70, 50, 20, 0.7);
+            overflow: hidden;
+            border: 1px solid #dbbc8b;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* верхняя полоса — яблоневый цвет */
+        .top-stripe {
+            background: #bc8f4b;
+            padding: 0.8rem 2rem;
+            color: #fdf5da;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #e8c37b;
+            animation: blossomGlow 5s infinite;
+        }
+
+        @keyframes blossomGlow {
+            0% { background-color: #bc8f4b; }
+            50% { background-color: #d4a45c; }
+            100% { background-color: #bc8f4b; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+        /* шапка страницы */
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #9b6d3d;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #f2e2ca;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #e7d2b5;
+        }
+
+        .subtit名 {
+            font-size: 1.6rem;
+            color: #ba874c;
+            font-style: italic;
+            border-bottom: 2px solid #edd7b7;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* блок с фото и основной инфо */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #f0dfc9;
+            border-radius: 60px 15px 60px 15px;
+            box-shadow: 16px 16px 0 #b5824c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 340px;
+            transition: all 0.4s;
+            animation: floatApple 5s infinite ease-in-out;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @keyframes floatApple {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 20px 20px 0 #9b6d3d; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(0.5deg);
+            border-color: #d9a669;
+            box-shadow: 20px 20px 0 #7f5833;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 60px 15px 60px 15px;
+            display: block;
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #fbf3e6;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #d69d55;
+            box-shadow: inset 0 2px 8px #f4e5d2, 0 10px 15px -12px #6b5136;
+            animation: slideInRight 1.3s;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #b07639;
+            border-bottom: 2px dotted #f0cfaa;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '🍎';
+            position: absolute;
+            bottom: -5px;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            animation: slideApple 3s infinite;
+        }
+
+        @keyframes slideApple {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eedabc;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(200, 140, 60, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 200px;
+            color: #9b6f3d;
+        }
+
+        .info-value {
+            color: #4a5a31;
+        }
+
+        .gardener-badge {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #b0762b;
+            border: 2px solid #dba95c;
+            box-shadow: 0 4px 6px #f3e1c8;
+            animation: gentlePulse 3s infinite;
+        }
+
+        @keyframes gentlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #fff6e7; }
+            100% { transform: scale(1); }
+        }
+
+        /* цитата о Беркут */
+        .quote-block {
+            background: #f7ecdb;
+            padding: 2rem 3rem;
+            border-radius: 80px 20px 80px 20px;
+            margin: 2.5rem 0;
+            color: #70552e;
+            font-size: 1.4rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #dba654;
+            box-shadow: 0 10px 18px #efd6b3;
+            position: relative;
+            animation: zoomIn 1.5s;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "🍏";
+            font-size: 4rem;
+            position: absolute;
+            left: 15px;
+            top: -20px;
+            opacity: 0.3;
+            animation: rotateApple 6s infinite linear;
+        }
+
+        @keyframes rotateApple {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            margin-top: 0.8rem;
+            color: #8e6d3f;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* две колонки — биография и учитель */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #faf2e2;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #ecd0aa;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #b28a5a;
+            border-color: #cb9b5b;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #a77134;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #dba157;
+            padding-left: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #565d36;
+        }
+
+        .teacher-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .teacher-list li {
+            padding: 0.4rem 0 0.4rem 2rem;
+            position: relative;
+            color: #6d5b37;
+            transition: transform 0.2s;
+        }
+
+        .teacher-list li:hover {
+            transform: translateX(5px);
+            color: #9e752f;
+        }
+
+        .teacher-list li::before {
+            content: "🌳";
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+        }
+
+        /* ученица Мичурина */
+        .michurin-box {
+            background: #eedabc;
+            padding: 2rem 2.5rem;
+            border-radius: 40px 80px 40px 80px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+            border: 1px solid #cfa45b;
+            color: #43512b;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .michurin-box:hover {
+            background: #e4ccaa;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #9b824f;
+        }
+
+        .michurin-box h3 {
+            color: #7f592b;
+            font-size: 2rem;
+            border-bottom: 2px solid #f5cf94;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight {
+            background: #fdf3d5;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            color: #7a592b;
+            font-weight: 500;
+        }
+
+        /* созданные сорта */
+        .varieties-box {
+            background: #f5e5ce;
+            padding: 1.8rem 2.5rem;
+            border-radius: 30px 80px 30px 80px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #d6a45c;
+            animation: rotateIn 1.6s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-0.5deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .varieties-box:hover {
+            background: #ecdbbc;
+            border-color: #b87e36;
+        }
+
+        .varieties-box h3 {
+            font-size: 2rem;
+            color: #7b592d;
+            display: inline-block;
+            border-bottom: 3px solid #eab868;
+        }
+
+        .varieties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .variety-item {
+            background: #fef9e8;
+            border-radius: 40px;
+            padding: 1.2rem 1.2rem;
+            text-align: center;
+            border: 1px solid #dbb079;
+            transition: 0.3s;
+        }
+
+        .variety-item:hover {
+            background: #ffefd1;
+            transform: scale(1.03);
+            border-color: #b87e2e;
+        }
+
+        .variety-name {
+            font-weight: 700;
+            color: #9e6127;
+            font-size: 1.3rem;
+        }
+
+        .variety-desc {
+            font-size: 1rem;
+            color: #727d46;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Беркутовский родник */
+        .spring-box {
+            background: #d7c4a2;
+            padding: 1.8rem 2.5rem;
+            border-radius: 70px 20px 70px 20px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #b58e54;
+            color: #25421f;
+        }
+
+        .spring-box h3 {
+            font-size: 2rem;
+            color: #5b4725;
+        }
+
+        .spring-highlight {
+            font-size: 1.3rem;
+            background: #f2e4ca;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+
+        /* опытная станция */
+        .station-box {
+            background: #e9d8bc;
+            padding: 1.5rem 2rem;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            border-left: 8px solid #ad803c;
+        }
+
+        /* ссылка назад */
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #e6d2b5;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #4f401d;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #b88d4b;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: bounceGentle 3s infinite;
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #dabd97;
+            border-color: #946a2e;
+            color: #2a2a0c;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #b18b53;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #bf9d6b;
+            margin-top: 2rem;
+            border-top: 1px dashed #e0c39d;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; min-height: 300px; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ✦ САРАТОВСКАЯ ПЛОДОВО-ВИНОГРАДНАЯ СТАНЦИЯ ✦ УЧЕНИЦА МИЧУРИНА ✦
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Ольга Беркут</h1>
+                <div class="subtit名">создательница саратовских сортов</div>
+            </div>
+
+            <!-- фото и основная информация -->
+            <div class="hero-section">
+                <!-- Исправленное место для фото -->
+                <div class="photo-placeholder">
+                    <img src="i (3).jpg" alt="Ольга Беркут" style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 60px 15px 60px 15px; display: block;">
+                </div>
+
+                <div class="quick-info">
+                    <h2>садовод-селекционер</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Ольга Дмитриевна Беркут</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">1895 — 1971</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Учитель</span>
+                        <span class="info-value">Иван Владимирович Мичурин</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Место работы</span>
+                        <span class="info-value">Саратовская плодово-виноградная опытная станция</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Известные сорта</span>
+                        <span class="info-value">яблоки «Беркутовское», груша «Румяная Беркут»</span>
+                    </div>
+                    <div class="gardener-badge">
+                        ✦ имя на карте Саратова ✦
+                    </div>
+                </div>
+            </div>
+
+            <!-- цитата о наследии -->
+            <div class="quote-block">
+                «Она создала знаменитый зимний сорт яблок "Беркутовское", а также сорта "Шафран Саратовский" и грушу "Румяная Беркут".»
+                <div class="quote-author">— из саратовских хроник</div>
+            </div>
+
+            <!-- две колонки: биография и мичуринская школа -->
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизненный путь</h3>
+                    <p>Родилась в 1895 году. С юности увлекалась садоводством. Поступила учиться к самому Ивану Мичурину — великому преобразователю природы. Впитала его методы и подходы к селекции плодовых культур.</p>
+                    <p>Вернувшись в Саратов, связала свою жизнь с Саратовской плодово-виноградной опытной станцией, где проработала десятилетия.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>ученица Мичурина</h3>
+                    <p>Иван Владимирович Мичурин высоко ценил талант Ольги Беркут. Именно он благословил её на создание новых сортов для сурового саратовского климата.</p>
+                    <ul class="teacher-list">
+                        <li>методы отбора и гибридизации</li>
+                        <li>адаптация к местным условиям</li>
+                        <li>зимостойкие сорта</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- мичуринская школа -->
+            <div class="michurin-box">
+                <h3>🍎 школа Мичурина</h3>
+                <p>Ольга Беркут была одной из самых талантливых последовательниц Мичурина. Она развивала его идеи на саратовской земле, создавая сорта, способные выдерживать засушливое лето и морозные зимы. Её работы сочетали научную строгость и садовую интуицию.</p>
+                <p style="margin-top: 1rem;"><span class="highlight">«Не ждать милостей от природы, а брать их у неё»</span> — этот мичуринский принцип стал главным в её жизни.</p>
+            </div>
+
+            <!-- созданные сорта -->
+            <div class="varieties-box">
+                <h3>★ саратовские сорта</h3>
+                <div class="varieties-grid">
+                    <div class="variety-item">
+                        <div class="variety-name">Беркутовское</div>
+                        <div class="variety-desc">зимний сорт яблок, лёжкий, сочный</div>
+                    </div>
+                    <div class="variety-item">
+                        <div class="variety-name">Румяная Беркут</div>
+                        <div class="variety-desc">груша с нежной мякотью</div>
+                    </div>
+                    <div class="variety-item">
+                        <div class="variety-name">Шафран Саратовский</div>
+                        <div class="variety-desc">осенний сорт яблок</div>
+                    </div>
+                    <div class="variety-item">
+                        <div class="variety-name">Саратовское зимнее</div>
+                        <div class="variety-desc">для долгого хранения</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Беркутовский родник -->
+            <div class="spring-box">
+                <h3>💧 Беркутовский родник</h3>
+                <div class="spring-highlight">Кумысная поляна, Саратов</div>
+                <p>В честь Ольги Дмитриевны Беркут назван родник на Кумысной поляне — любимом месте отдыха саратовцев. Чистая вода, текущая из земли, — символ благодарной памяти о женщине, чьи труды приносили плоды, буквально и метафорически.</p>
+                <p style="margin-top: 1rem;"><em>Родник благоустроен, к нему приходят за водой и помнят имя селекционера.</em></p>
+            </div>
+
+            <!-- Саратовская станция -->
+            <div class="station-box">
+                <p><strong>🍐 Саратовская плодово-виноградная опытная станция:</strong> Здесь Ольга Беркут провела лучшие годы, создавая сорта, которые десятилетиями радовали садоводов. Многие из них до сих пор выращивают на дачах и в промышленных садах.</p>
+            </div>
+
+            <!-- память -->
+            <div style="background: #f3e2cb; padding: 1.5rem 2rem; border-radius: 30px; margin: 2rem 0; border-left: 8px solid #b77d39;">
+                <p><strong>🌳 наследие:</strong> Сорта Ольги Беркут продолжают жить. Яблоки «Беркутовское» можно попробовать и сегодня — они хранятся всю зиму, сохраняя аромат саратовского лета. А родник на Кумысной поляне напоминает каждому, кто пьёт из него, о женщине, посвятившей жизнь земле.</p>
+            </div>
+
+            <!-- ссылка на главную -->
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>🍏 её яблоки зреют в наших садах • саратовская земля помнит • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

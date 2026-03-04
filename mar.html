@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зинаида Маресева — ангел спасения</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2a1e19;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #f0e3db;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fdf7f2;
+            color: #3d2c23;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(70, 30, 10, 0.7);
+            overflow: hidden;
+            border: 1px solid #c9a68c;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* верхняя полоса — красный крест */
+        .top-stripe {
+            background: #9d2b2b;
+            padding: 0.8rem 2rem;
+            color: #fcf0e7;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #e0b18b;
+            animation: heartPulse 4s infinite;
+        }
+
+        @keyframes heartPulse {
+            0% { background-color: #9d2b2b; }
+            50% { background-color: #b83b3b; }
+            100% { background-color: #9d2b2b; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+        /* шапка страницы */
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #7a3a2a;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #ebd5c4;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #dbbcac;
+        }
+
+        .subtit名 {
+            font-size: 1.5rem;
+            color: #b4563a;
+            font-style: italic;
+            border-bottom: 2px solid #e4cbb8;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* блок с фото и основной инфо */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #eed7cb;
+            border-radius: 40px 10px 40px 10px;
+            box-shadow: 16px 16px 0 #9b5842;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: #6d3b28;
+            border: 2px dashed #c48264;
+            min-height: 340px;
+            transition: all 0.4s;
+            animation: floatCross 5s infinite ease-in-out;
+        }
+
+        @keyframes floatCross {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); box-shadow: 20px 20px 0 #7a4532; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(-1deg);
+            border-color: #b26340;
+            box-shadow: 20px 20px 0 #613b2b;
+        }
+
+        .photo-placeholder span {
+            font-size: 5rem;
+            opacity: 0.7;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            35% { transform: scale(1); }
+            45% { transform: scale(1.05); }
+            55% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        .photo-placeholder p {
+            background: #fbede3;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #804a34;
+            border: 1px solid #bb7e63;
+            margin-top: 1rem;
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #fbefe7;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #b65231;
+            box-shadow: inset 0 2px 8px #fee8da, 0 10px 15px -12px #573829;
+            animation: slideInRight 1.3s;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #914a31;
+            border-bottom: 2px dotted #dcb6a0;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '❤️';
+            position: absolute;
+            bottom: -5px;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            animation: slideHeart 3s infinite;
+        }
+
+        @keyframes slideHeart {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e6cfc0;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(190, 90, 50, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 180px;
+            color: #7a4a36;
+        }
+
+        .info-value {
+            color: #493728;
+        }
+
+        .hero-star {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 700;
+            color: #a63f1a;
+            border: 2px solid #cb7e5b;
+            box-shadow: 0 4px 6px #efd5c4;
+            animation: starPulse 2.5s infinite;
+        }
+
+        @keyframes starPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #ffede3; }
+            100% { transform: scale(1); }
+        }
+
+        /* цитата — подвиг */
+        .quote-block {
+            background: #f3dfd4;
+            padding: 2rem 3rem;
+            border-radius: 30px 80px 30px 80px;
+            margin: 2.5rem 0;
+            color: #4f2c1b;
+            font-size: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #c28769;
+            box-shadow: 0 10px 18px #dbb49b;
+            position: relative;
+            animation: zoomIn 1.5s;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "⚕️";
+            font-size: 4rem;
+            position: absolute;
+            left: 15px;
+            top: -25px;
+            opacity: 0.3;
+            animation: rotateMed 6s infinite linear;
+        }
+
+        @keyframes rotateMed {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            color: #8b523a;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* две колонки: жизнь и подвиг */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #fcf1e9;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #dbb8a3;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #aa735b;
+            border-color: #bf7d5c;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #8f4f35;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #b56440;
+            padding-left: 1rem;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #4b3429;
+        }
+
+        .saved-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .saved-list li {
+            padding: 0.4rem 0 0.4rem 2.2rem;
+            position: relative;
+            color: #6a3f2b;
+            transition: transform 0.2s;
+        }
+
+        .saved-list li:hover {
+            transform: translateX(5px);
+            color: #994a2a;
+        }
+
+        .saved-list li::before {
+            content: "❤️";
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+        }
+
+        /* последний бой */
+        .last-stand {
+            background: #89543f;
+            color: #fef1e5;
+            padding: 2rem 2.5rem;
+            border-radius: 50px 15px 50px 15px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .last-stand:hover {
+            background: #9f6a52;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #4f3022;
+        }
+
+        .last-stand h3 {
+            color: #ffdec6;
+            font-size: 2rem;
+            border-bottom: 2px solid #f0ba97;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .date-badge {
+            background: #c77952;
+            color: #1e0d05;
+            padding: 0.2rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* цифры спасения */
+        .stats {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: #f5e1d4;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            min-width: 120px;
+            border: 2px solid #b36442;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #973f1c;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #472d20;
+        }
+
+        /* награды */
+        .awards-box {
+            background: #edd9cd;
+            padding: 1.5rem 2rem;
+            border-radius: 80px 20px 80px 20px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #b4795b;
+            animation: rotateIn 1.6s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-0.5deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .awards-box:hover {
+            background: #e2caba;
+            border-color: #a35c3b;
+        }
+
+        .awards-box h3 {
+            font-size: 2rem;
+            color: #6b3d27;
+            display: inline-block;
+            border-bottom: 3px solid #bb7a5a;
+        }
+
+        .medals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .medal {
+            background: #b15937;
+            color: #ffefd3;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            border: 1px solid #eab088;
+        }
+
+        /* память */
+        .memory {
+            background: #bc8b74;
+            color: #28190f;
+            padding: 1.2rem 2rem;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            border-left: 8px solid #4e2d1d;
+        }
+
+        /* ссылка назад */
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #dbb6a2;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #2d1a10;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #a56f55;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: bounceGentle 3s infinite;
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #cba48c;
+            border-color: #7d4d34;
+            color: #130b07;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #996e56;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #b3876f;
+            margin-top: 2rem;
+            border-top: 1px dashed #cb9f86;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 3rem; }
+            .stats { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ✦ 214-Й ГВАРДЕЙСКИЙ СТРЕЛКОВЫЙ ПОЛК ✦ 73-Я ГВАРДЕЙСКАЯ ДИВИЗИЯ ✦
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Зинаида Маресева</h1>
+                <div class="subtit名">гвардии старший сержант медицинской службы</div>
+            </div>
+
+            <!-- фото и основная информация -->
+            <div class="hero-section">
+                <div class="photo-placeholder" style="padding: 0; overflow: hidden; background: #6d3b28; display: flex; align-items: center; justify-content: center;">
+                <img src= "IMG_20260304_211909.png" alt="Зинаида Маресева" style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 40px 10px 40px 10px; display: block;">
+</div>
+                   
+                </div>
+
+                <div class="quick-info">
+                    <h2>спасшая жизни</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Зинаида Ивановна Маресева</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">20 июня 1923 — 6 августа 1943</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Должность</span>
+                        <span class="info-value">санинструктор санитарного взвода</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Часть</span>
+                        <span class="info-value">1-й батальон, 214-й гв. стрелковый полк</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Спасла раненых</span>
+                        <span class="info-value"><strong>57</strong> бойцов с поля боя</span>
+                    </div>
+                    <div class="hero-star">
+                        ★ ГЕРОЙ СОВЕТСКОГО СОЮЗА (посмертно) ★
+                    </div>
+                </div>
+            </div>
+
+            <!-- цитата о подвиге -->
+            <div class="quote-block">
+                «Она выносила раненых из-под шквального огня, перевязывала, успокаивала, а потом снова ползла в пекло. Ей было всего двадцать.»
+                <div class="quote-author">— из наградного листа</div>
+            </div>
+
+            <!-- статистика спасения -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">57</div>
+                    <div class="stat-label">спасённых жизней</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">лет (всего)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6.08.1943</div>
+                    <div class="stat-label">последний бой</div>
+                </div>
+            </div>
+
+            <!-- две колонки: биография и военный путь -->
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизнь до войны</h3>
+                    <p>Родилась в селе Черкасское Саратовской области в крестьянской семье. Окончила школу, работала на заводе. С детства мечтала помогать людям, поэтому выучилась на медсестру.</p>
+                    <p>В 1942 году, когда ей было 19 лет, ушла на фронт добровольцем. Попала в 214-й гвардейский стрелковый полк.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>санинструктор</h3>
+                    <p>Зинаида была не просто медсестрой — она под пулями вытаскивала раненых, делала перевязки под обстрелами, выносила бойцов вместе с оружием. Её любили в полку за нежность и отвагу.</p>
+                    <ul class="saved-list">
+                        <li>июль 1943 — спасла 12 бойцов</li>
+                        <li>начало августа — ещё 20 раненых</li>
+                        <li>всего 57 спасённых жизней</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- последний бой (подробно) -->
+            <div class="last-stand">
+                <h3>⚔ подвиг у села Пятигорье</h3>
+                <div class="date-badge">6 августа 1943 года</div>
+                <p>В ожесточённом бою за село Пятигорье (Харьковская область) Зинаида Маресева под ураганным огнём вынесла с поля боя 30 раненых бойцов с оружием. Когда противник пошёл в контратаку, она вместе с бойцами отражала натиск, перевязывала раненых и снова стреляла.</p>
+                <p style="margin-top: 1rem;">В этом бою Зинаида была смертельно ранена осколком мины. Товарищи похоронили её с воинскими почестями. Через месяц, 8 сентября 1943 года, ей посмертно присвоили звание Героя Советского Союза.</p>
+            </div>
+
+            <!-- награды -->
+            <div class="awards-box">
+                <h3>золотая звезда</h3>
+                <div class="medals">
+                    <span class="medal">Герой Советского Союза</span>
+                    <span class="medal">Орден Ленина</span>
+                    <span class="medal">Орден Красной Звезды</span>
+                    <span class="medal">Медаль «За отвагу»</span>
+                </div>
+                <p style="margin-top: 1.5rem;"><strong>Из Указа Президиума Верховного Совета СССР:</strong> «За образцовое выполнение боевых заданий командования и проявленные мужество и героизм в боях с немецко-фашистскими захватчиками...»</p>
+            </div>
+
+            <!-- память -->
+            <div class="memory">
+                <p><strong>🕯 помнят до сих пор:</strong> Именем Зинаиды Маресевой названы улицы в Саратове, Волгограде, в родном селе Черкасское. В школе, где она училась, создан музей. Её имя выбито на мемориалах павшим героям.</p>
+            </div>
+
+            <!-- ссылка на главную -->
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>❤️ вечная память тем, кто нёс жизнь сквозь войну • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

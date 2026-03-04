@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Женщины, изменившие мир — Саратовский край</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #e9ddd0 0%, #f5ede3 100%);
+            font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+            color: #2e241f;
+            line-height: 1.5;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный фон с узорами */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(210, 180, 150, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 70%, rgba(170, 140, 110, 0.08) 0%, transparent 25%),
+                repeating-linear-gradient(45deg, rgba(200, 170, 140, 0.03) 0px, rgba(200, 170, 140, 0.03) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 251, 245, 0.7);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px -20px rgba(60, 40, 25, 0.3);
+            padding: 2.5rem 2.5rem 3.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(235, 225, 210, 0.6);
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header-decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .header-decoration span {
+            font-size: 2.2rem;
+            color: #c4aa8c;
+            letter-spacing: 12px;
+            font-weight: 300;
+            animation: sparkle 3s infinite alternate;
+            text-shadow: 0 0 8px rgba(180, 140, 100, 0.3);
+        }
+
+        @keyframes sparkle {
+            0% { opacity: 0.6; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.1); text-shadow: 0 0 12px #d4b088; }
+        }
+
+        .header-decoration span:first-child {
+            animation-delay: 0.2s;
+        }
+        .header-decoration span:last-child {
+            animation-delay: 0.6s;
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            font-weight: 500;
+            text-align: center;
+            color: #3b2c1d;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-shadow: 4px 4px 0 rgba(235, 215, 190, 0.7), 6px 6px 0 rgba(0,0,0,0.02);
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+            transform-origin: center;
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 4px 4px 0 #f0e0d0, 6px 6px 0 rgba(0,0,0,0.02); }
+            to { text-shadow: 6px 6px 0 #e8d0b8, 8px 8px 0 rgba(140, 90, 50, 0.1); }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.6rem;
+            color: #7b5f4b;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2.8rem auto;
+            border-top: 2px solid #dacbbc;
+            border-bottom: 2px solid #dacbbc;
+            padding: 0.8rem 0;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .subtitle::before, .subtitle::after {
+            content: "❦";
+            color: #b39374;
+            font-size: 1.4rem;
+            position: absolute;
+            opacity: 0.7;
+        }
+        .subtitle::before { left: -30px; top: -2px; }
+        .subtitle::after { right: -30px; bottom: -2px; }
+
+        .intro {
+            background: linear-gradient(135deg, #f8f0e6, #f0e2d4);
+            border-left: 6px solid #b39374;
+            padding: 2rem 2.5rem;
+            border-radius: 60px 20px 60px 20px;
+            margin-bottom: 3.5rem;
+            font-size: 1.25rem;
+            color: #2e2a26;
+            box-shadow: 0 20px 30px -10px rgba(110, 70, 40, 0.15);
+            transition: box-shadow 0.4s;
+            border: 1px solid rgba(255, 245, 235, 0.6);
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro:hover {
+            box-shadow: 0 25px 35px -10px #9f8268;
+        }
+
+        .intro p {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .intro p::first-letter {
+            font-size: 3rem;
+            float: left;
+            line-height: 0.8;
+            margin-right: 8px;
+            color: #9f7e60;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem 2rem;
+            margin: 4rem 0 2.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px 16px 40px 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(80, 55, 35, 0.2);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(225, 205, 185, 0.6);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardAppear 0.7s forwards;
+            animation-delay: calc(0.1s * var(--order, 0));
+        }
+
+        .card:nth-child(1) { --order: 1; }
+        .card:nth-child(2) { --order: 2; }
+        .card:nth-child(3) { --order: 3; }
+        .card:nth-child(4) { --order: 4; }
+        .card:nth-child(5) { --order: 5; }
+        .card:nth-child(6) { --order: 6; }
+        .card:nth-child(7) { --order: 7; }
+        .card:nth-child(8) { --order: 8; }
+
+        @keyframes cardAppear {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 32px 40px -15px #866e56;
+            border-color: #c9ad91;
+        }
+
+        .card-image {
+            height: 220px;
+            background: linear-gradient(145deg, #dad0c2, #bfaa95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #4d3a2a;
+            border-bottom: 4px solid #ebd5c0;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(240, 220, 195, 0.4) 0px, rgba(240, 220, 195, 0.4) 12px, transparent 12px, transparent 24px),
+                radial-gradient(circle at 30% 40%, rgba(255,240,220,0.3) 0%, transparent 30%);
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,240,0.3), transparent);
+            transition: left 0.6s;
+        }
+
+        .card:hover .card-image::after {
+            left: 100%;
+        }
+
+        .card-image span {
+            background: rgba(255, 250, 240, 0.9);
+            width: 120px;
+            height: 120px;
+            border-radius: 50% 30% 50% 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: 0 10px 20px #8b6f5490, inset 0 -4px 6px #ffeee0;
+            border: 3px solid #fff5e6;
+            transition: all 0.4s;
+            transform: rotate(0deg);
+        }
+
+        .card:hover .card-image span {
+            transform: rotate(5deg) scale(1.05);
+            border-radius: 30% 50% 30% 50%;
+            background: #fffefc;
+        }
+
+        .card-content {
+            padding: 1.8rem 1.5rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h2 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #342415;
+            line-height: 1.2;
+            border-bottom: 2px dotted #d4bdab;
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            transition: color 0.3s;
+        }
+
+        .card:hover h2 {
+            color: #61422c;
+        }
+
+        .years {
+            font-family: 'Courier New', monospace;
+            background: #e9d7c6;
+            color: #3b2d20;
+            padding: 0.25rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            border: 1px solid #bca48d;
+            align-self: flex-start;
+            box-shadow: inset 0 1px 4px #fff8f0;
+            transition: all 0.3s;
+        }
+
+        .card:hover .years {
+            background: #cfb9a4;
+            color: #1f140e;
+            border-color: #9d826b;
+        }
+
+        .description {
+            color: #3f352d;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .famous-list {
+            list-style: none;
+            padding: 1rem 0 0 0;
+            border-top: 1px solid #e6d2bf;
+            font-size: 1rem;
+            color: #634d3b;
+        }
+
+        .famous-list li {
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .famous-list li:hover {
+            transform: translateX(4px);
+            color: #2d1e13;
+        }
+
+        .famous-list li::before {
+            content: "✦";
+            color: #b87e58;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .famous-list li:hover::before {
+            color: #864f2a;
+            transform: rotate(15deg);
+        }
+
+        .btn-page {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, #dac2ad, #c7aa90);
+            color: #251d16;
+            text-decoration: none;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid #b18b70;
+            text-align: center;
+            font-size: 1rem;
+            letter-spacing: 0.6px;
+            align-self: flex-start;
+            box-shadow: 0 4px 10px rgba(140, 100, 70, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-page::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 245, 235, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.4s, height 0.4s;
+        }
+
+        .btn-page:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn-page:hover {
+            background: #cfb49b;
+            border-color: #7a5f48;
+            color: #1f140e;
+            box-shadow: 0 8px 18px #9f8264;
+            transform: scale(1.05);
+        }
+
+        .btn-page:active {
+            transform: scale(0.98);
+        }
+
+        .footer-note {
+            margin-top: 5rem;
+            text-align: center;
+            color: #9a826c;
+            font-size: 1.2rem;
+            border-top: 2px dashed #d6c0ae;
+            padding-top: 2.2rem;
+            font-style: italic;
+            position: relative;
+        }
+
+        .footer-note a {
+            color: #755e4a;
+            text-decoration: none;
+            border-bottom: 2px dotted;
+            transition: all 0.3s;
+        }
+
+        .footer-note a:hover {
+            color: #422e1e;
+            border-bottom-style: solid;
+            letter-spacing: 1px;
+        }
+
+        .footer-note::before {
+            content: "☽";
+            font-size: 2rem;
+            position: absolute;
+            left: 30%;
+            top: -18px;
+            background: #f9f5f0;
+            padding: 0 20px;
+            color: #b79b82;
+        }
+
+        .footer-note::after {
+            content: "☾";
+            font-size: 2rem;
+            position: absolute;
+            right: 30%;
+            top: -18px;
+            background: #f9f5f0;
+            padding: 0 20px;
+            color: #b79b82;
+        }
+
+        @media (max-width: 700px) {
+            h1 { font-size: 2.8rem; }
+            .subtitle { font-size: 1.2rem; }
+            .container { padding: 1.5rem; }
+            .footer-note::before, .footer-note::after { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2rem; }
+            .card-image { height: 180px; }
+            .card-image span { width: 90px; height: 90px; font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    
+    <div class="header-decoration">
+        <span>⋆⍟⋆</span>
+        <span style="font-size: 2.4rem; letter-spacing: 6px;">САРАТОВ</span>
+        <span>⋆⍟⋆</span>
+    </div>
+
+    <h1>Женщины моего города</h1>
+    <div class="subtitle">Судьбы. Талант. Наследие. Саратовский край</div>
+
+    <div class="intro">
+        <p>✧ На этой земле рождались голоса, что звучат сквозь десятилетия, создавались сорта, кормящие людей, и вершились подвиги, о которых слагали легенды. Перед вами — восемь имён. Восемь вселенных. Перейдите на страницу каждой героини, чтобы узнать её историю целиком.</p>
+    </div>
+
+    <div class="grid">
+        <!-- Карточки с атрибутом data для анимации, порядок сохранён -->
+        <div class="card">
+            <div class="card-image"><span>🎤</span></div>
+            <div class="card-content">
+                <h2>Лидия Русланова</h2>
+                <span class="years">1900–1973</span>
+                <div class="description">Великая исполнительница, создавшая неповторимый стиль народной песни. Голос широкого диапазона, собравшая фольклор всей жизни.</div>
+                <ul class="famous-list">
+                    <li>«Валенки», «Степь да степь»</li>
+                    <li>Первая исполнительница «Катюши»</li>
+                    <li>Уникальный тембр и драматизм</li>
+                </ul>
+                <a href="lid.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>✈️</span></div>
+            <div class="card-content">
+                <h2>Раиса Аронова</h2>
+                <span class="years">1920–1982</span>
+                <div class="description">Лётчица 46-го гвардейского полка ночных бомбардировщиков. Герой Советского Союза. Отважная «ночная ведьма».</div>
+                <ul class="famous-list">
+                    <li>Гвардии лейтенант, 2-й Белорусский фронт</li>
+                    <li>Совершила 960 боевых вылетов</li>
+                    <li>Награждена Золотой Звездой</li>
+                </ul>
+                <a href="rai.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>📚</span></div>
+            <div class="card-content">
+                <h2>В. Мухина-Петринская</h2>
+                <span class="years">1909–1993</span>
+                <div class="description">Детская писательница-романтик. Её герои — честные романтики, идущие к тайнам науки и природы.</div>
+                <ul class="famous-list">
+                    <li>Представитель романтического реализма</li>
+                    <li>Книги против лицемерия и лжи</li>
+                    <li>«Корабли Санди» и др.</li>
+                </ul>
+                <a href="myx.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>⚕️</span></div>
+            <div class="card-content">
+                <h2>Зинаида Маресева</h2>
+                <span class="years">1923–1943</span>
+                <div class="description">Санинструктор, гвардии старший сержант. Спасла жизни десятков бойцов. Герой Советского Союза (посмертно).</div>
+                <ul class="famous-list">
+                    <li>214-й гвардейский стрелковый полк</li>
+                    <li>Вынесла с поля боя 57 раненых</li>
+                    <li>Погибла в 20 лет</li>
+                </ul>
+                <a href="mar.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>📜</span></div>
+            <div class="card-content">
+                <h2>Анна Пасхалова</h2>
+                <span class="years">1823–1885</span>
+                <div class="description">Писательница, собирательница фольклора. Издала «Былины и песни, записанные в Саратове».</div>
+                <ul class="famous-list">
+                    <li>Псевдоним А. Б-цъ</li>
+                    <li>Совместно с Костомаровым</li>
+                    <li>Основа этнографии края</li>
+                </ul>
+                <a href="pac.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>🌾</span></div>
+            <div class="card-content">
+                <h2>Валентина Мамонтова</h2>
+                <span class="years">1895–1982</span>
+                <div class="description">Селекционер, доктор наук. Создатель метода ступенчатой гибридизации яровой пшеницы.</div>
+                <ul class="famous-list">
+                    <li>Сорта твёрдой и мягкой пшеницы</li>
+                    <li>Основа мировой селекции</li>
+                    <li>Работа в Саратове</li>
+                </ul>
+                <a href="mam.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image"><span>🍎</span></div>
+            <div class="card-content">
+                <h2>Ольга Беркут</h2>
+                <span class="years">1895–1971</span>
+                <div class="description">Селекционер, ученица Мичурина. Создала сорта яблок «Беркутовское», грушу «Румяная Беркут».</div>
+                <ul class="famous-list">
+                    <li>Зимний сорт «Беркутовка»</li>
+                    <li>«Шафран Саратовский»</li>
+                    <li>Родник имени Беркут</li>
+                </ul>
+                <a href="ber.html" class="btn-page">перейти на страницу →</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: right; font-size: 1.4rem; color: #8f755d; margin-top: 0.5rem; padding-right: 1rem; opacity: 0.8; letter-spacing: 2px; animation: glowPulse 3s infinite;">
+        <span>⋆ собрано с любовью к саратовским звёздам ⋆</span>
+    </div>
+    <style>
+        @keyframes glowPulse {
+            0% { opacity: 0.6; text-shadow: 0 0 5px #dbba9f; }
+            50% { opacity: 1; text-shadow: 0 0 15px #c89f7b; }
+            100% { opacity: 0.6; text-shadow: 0 0 5px #dbba9f; }
+        }
+    </style>
+</div>
+</body>
+</html>

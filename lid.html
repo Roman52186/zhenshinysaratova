@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лидия Русланова — голос эпохи</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #2b221c;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #f3ede5;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            animation: fadeInBody 1.5s ease;
+        }
+
+        @keyframes fadeInBody {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #fefaf5;
+            color: #2e2823;
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.6);
+            overflow: hidden;
+            border: 1px solid #cbb295;
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* верхняя декоративная полоса */
+        .top-stripe {
+            background: #8a2f1f;
+            padding: 0.8rem 2rem;
+            color: #f7dcc9;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-align: center;
+            word-spacing: 8px;
+            border-bottom: 3px solid #bc6f4b;
+            animation: pulseStripe 3s infinite;
+        }
+
+        @keyframes pulseStripe {
+            0% { background-color: #8a2f1f; }
+            50% { background-color: #a5452a; }
+            100% { background-color: #8a2f1f; }
+        }
+
+        .content {
+            padding: 2.5rem 2.5rem 3rem;
+        }
+
+        /* шапка страницы с именем */
+        .name-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            animation: fadeInTitle 1.8s ease;
+        }
+
+        @keyframes fadeInTitle {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .name-header h1 {
+            font-size: 4.2rem;
+            font-weight: 600;
+            color: #572e1d;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #eedac9;
+            line-height: 1.1;
+            text-align: center;
+            transition: text-shadow 0.3s;
+        }
+
+        .name-header h1:hover {
+            text-shadow: 5px 5px 0 #d4b79b;
+        }
+
+        .subtit名 {
+            font-size: 1.5rem;
+            color: #9d583b;
+            font-style: italic;
+            border-bottom: 2px solid #e4cfbb;
+            padding-bottom: 0.6rem;
+            margin-top: -0.2rem;
+            display: inline-block;
+            animation: slideInLeft 1.2s;
+        }
+
+        @keyframes slideInLeft {
+            0% { transform: translateX(-30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* макет с фотографией и основными фактами */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .photo-placeholder {
+            flex: 0 0 300px;
+            background: #e5d7cb;
+            border-radius: 30px 10px 30px 10px;
+            box-shadow: 16px 16px 0 #794f38;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: #4f3a2c;
+            border: 2px dashed #b5805f;
+            min-height: 340px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: floatPhoto 4s infinite ease-in-out;
+        }
+
+        @keyframes floatPhoto {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); box-shadow: 20px 20px 0 #794f38; }
+            100% { transform: translateY(0px); }
+        }
+
+        .photo-placeholder:hover {
+            transform: scale(1.02) rotate(1deg);
+            border-color: #a5653d;
+            box-shadow: 20px 20px 0 #633f2d;
+        }
+
+        .photo-placeholder span {
+            font-size: 5rem;
+            opacity: 0.6;
+            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
+            animation: spinMatryoshka 8s infinite linear;
+        }
+
+        @keyframes spinMatryoshka {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .photo-placeholder p {
+            background: #f1e3d8;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #543e2e;
+            border: 1px solid #c7a487;
+            margin-top: 1rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .photo-placeholder p:hover {
+            background: #e5cdb8;
+            transform: scale(1.05);
+        }
+
+        .quick-info {
+            flex: 1;
+            background: #f8efe7;
+            border-radius: 30px;
+            padding: 2rem 2.2rem;
+            border-left: 12px solid #b3532f;
+            box-shadow: inset 0 2px 8px #f9e7da, 0 10px 15px -12px #4f3322;
+            animation: slideInRight 1.3s;
+            transition: box-shadow 0.4s;
+        }
+
+        .quick-info:hover {
+            box-shadow: inset 0 2px 8px #f9e7da, 0 15px 25px -10px #794f38;
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(30px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .quick-info h2 {
+            font-size: 2.2rem;
+            color: #773d25;
+            border-bottom: 2px dotted #c8ab94;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #b3532f;
+            animation: slideLine 2.5s infinite;
+        }
+
+        @keyframes slideLine {
+            0% { left: -100%; }
+            50% { left: 0; }
+            100% { left: 100%; }
+        }
+
+        .info-row {
+            display: flex;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eed6c4;
+            transition: transform 0.2s, background 0.2s;
+            border-radius: 8px;
+        }
+
+        .info-row:hover {
+            transform: translateX(8px);
+            background: rgba(200, 140, 110, 0.1);
+            padding-left: 8px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            width: 150px;
+            color: #5b3d2b;
+        }
+
+        .info-value {
+            color: #3f2c1d;
+        }
+
+        .signature-song {
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 50px;
+            padding: 0.7rem 1.5rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #7b3f24;
+            border: 1px solid #c28c6a;
+            box-shadow: 0 4px 6px #ebdad0;
+            animation: pulse 2.5s infinite;
+            transition: all 0.3s;
+        }
+
+        .signature-song:hover {
+            background: #fae3d4;
+            transform: scale(1.1) rotate(-1deg);
+            box-shadow: 0 8px 15px #c28c6a;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); background-color: #fff3e9; }
+            100% { transform: scale(1); }
+        }
+
+        /* блок цитаты */
+        .quote-block {
+            background: #ead7c9;
+            padding: 2rem 3rem;
+            border-radius: 100px 20px 100px 20px;
+            margin: 2.5rem 0;
+            color: #2d1d13;
+            font-size: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            border: 2px solid #b4876a;
+            box-shadow: 0 10px 18px #c9ad95;
+            position: relative;
+            animation: zoomIn 1.5s;
+            transition: box-shadow 0.4s;
+        }
+
+        .quote-block:hover {
+            box-shadow: 0 18px 30px #b4876a;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .quote-block::before {
+            content: "“";
+            font-size: 6rem;
+            position: absolute;
+            left: 10px;
+            top: -20px;
+            color: #9d6550;
+            opacity: 0.4;
+            font-family: serif;
+            animation: bounceQuote 3s infinite;
+        }
+
+        @keyframes bounceQuote {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            color: #603e2b;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* биография, творческий путь */
+        .bio-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .bio-card {
+            background: #fcf4ec;
+            padding: 1.6rem 2rem;
+            border-radius: 30px 8px 30px 8px;
+            border: 1px solid #d7bcab;
+            transition: all 0.4s;
+            animation: fadeInCards 1.2s;
+        }
+
+        @keyframes fadeInCards {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .bio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 25px -10px #a57153;
+            border-color: #b5805f;
+        }
+
+        .bio-card h3 {
+            font-size: 2rem;
+            color: #8b4e31;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            border-left: 8px solid #ac7357;
+            padding-left: 1rem;
+            transition: border-left-width 0.2s;
+        }
+
+        .bio-card:hover h3 {
+            border-left-width: 12px;
+        }
+
+        .bio-card p {
+            margin-bottom: 1rem;
+            color: #3c3028;
+        }
+
+        .song-list {
+            columns: 2;
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .song-list li {
+            padding: 0.2rem 0 0.2rem 1.6rem;
+            position: relative;
+            color: #462f21;
+            break-inside: avoid;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .song-list li:hover {
+            transform: translateX(5px);
+            color: #8b4e31;
+        }
+
+        .song-list li:hover::before {
+            transform: scale(1.3);
+        }
+
+        .song-list li::before {
+            content: "♪";
+            color: #b3532a;
+            font-size: 1.4rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            transition: transform 0.2s;
+        }
+
+        /* военный и творческий подвиг */
+        .war-path {
+            background: #5a3727;
+            color: #f1e2d3;
+            padding: 2rem 2.5rem;
+            border-radius: 50px 8px 50px 8px;
+            margin: 2rem 0;
+            transition: all 0.4s;
+            animation: slideInUp 1.4s;
+        }
+
+        @keyframes slideInUp {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        .war-path:hover {
+            background: #6a4533;
+            transform: scale(1.01);
+            box-shadow: 0 15px 25px #301f16;
+        }
+
+        .war-path h3 {
+            color: #fbcbac;
+            font-size: 2rem;
+            border-bottom: 2px solid #bd8d70;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .war-path p {
+            color: #f6e2d2;
+        }
+
+        .war-path strong {
+            color: #fdd7b6;
+        }
+
+        /* особый дар — собирательство */
+        .gift-box {
+            background: #fff3e8;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            transition: all 0.4s;
+            animation: fadeIn 2s;
+            border-left: 5px solid #b5805f;
+        }
+
+        .gift-box:hover {
+            background: #fae4d4;
+            border-left-width: 12px;
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .gift-box h3 {
+            color: #7a3f28;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .gift-box h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b5805f;
+            transition: width 0.5s;
+        }
+
+        .gift-box:hover h3::after {
+            width: 100%;
+        }
+
+        /* наследие */
+        .legacy-box {
+            background: #eedbcb;
+            padding: 1.8rem 2.5rem;
+            border-radius: 20px 80px 20px 80px;
+            margin: 2.5rem 0 1rem;
+            border: 2px solid #b7866b;
+            animation: rotateIn 1.6s;
+            transition: border-radius 0.4s, background 0.4s;
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-1deg) scale(0.98); opacity: 0; }
+            100% { transform: rotate(0) scale(1); opacity: 1; }
+        }
+
+        .legacy-box:hover {
+            border-radius: 40px 40px 40px 40px;
+            background: #e3cbb8;
+        }
+
+        .legacy-box h3 {
+            font-size: 2rem;
+            color: #5a2e1b;
+            display: inline-block;
+            border-bottom: 3px solid #b0795b;
+            transition: border-bottom-width 0.2s;
+        }
+
+        .legacy-box:hover h3 {
+            border-bottom-width: 5px;
+        }
+
+        /* ссылка назад */
+        .back-link {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .back-link a {
+            background: #d1b7a4;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            color: #2f1f15;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: 2px solid #af8b74;
+            display: inline-block;
+            font-size: 1.2rem;
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .back-link a:hover {
+            background: #b48d75;
+            border-color: #714b33;
+            color: #110b07;
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 20px #7a5d4b;
+            animation: none;
+        }
+
+        .footer-small {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ae8e78;
+            margin-top: 2rem;
+            border-top: 1px dashed #cda98b;
+            padding-top: 1.5rem;
+            animation: fadeIn 3s;
+        }
+
+        @media (max-width: 750px) {
+            .hero-section { flex-direction: column; }
+            .photo-placeholder { flex: auto; max-width: 300px; margin: 0 auto; }
+            .bio-section { grid-template-columns: 1fr; }
+            .name-header h1 { font-size: 3.2rem; }
+            .song-list { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="top-stripe">
+            ★ НАРОДНАЯ АРТИСТКА РСФСР ★ ЛЕГЕНДА СЦЕНЫ ★
+        </div>
+
+        <div class="content">
+            <div class="name-header">
+                <h1>Лидия Русланова</h1>
+                <div class="subtit名">царь-баба русского пения</div>
+            </div>
+
+            <!-- зона для фото и основной информации -->
+            <div class="hero-section">
+                <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
+                <img src= "IMG_20260304_205452.png" alt="Лидия Русланова" 
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 30px 10px 30px 10px;">
+                <p style="font-size: 0.8rem; background: transparent; border: none;">(1900–1973)
+</div>
+
+                <div class="quick-info">
+                    <h2>главное о голосе</h2>
+                    <div class="info-row">
+                        <span class="info-label">Полное имя</span>
+                        <span class="info-value">Прасковья Андриановна Лейкина</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Годы жизни</span>
+                        <span class="info-value">14 (27) октября 1900 — 21 сентября 1973</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Голос</span>
+                        <span class="info-value">контральто, широкого диапазона</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Главная сцена</span>
+                        <span class="info-value">вся Россия, от окопов до Кремля</span>
+                    </div>
+                    <div class="signature-song">
+                        ♫ коронная — «Валенки», «Саратовские страдания»
+                    </div>
+                </div>
+            </div>
+
+            <!-- крылатая фраза о голосе -->
+            <div class="quote-block">
+                «Голос у неё был — как река разлилась: ширь, сила, а то вдруг зальётся тонкой, как серебряная ниточка.»
+                <div class="quote-author">— из воспоминаний современников</div>
+            </div>
+
+            <!-- две колонки: биография и песни -->
+            <div class="bio-section">
+                <div class="bio-card">
+                    <h3>жизнь</h3>
+                    <p>Родилась в простой крестьянской семье в Саратовской губернии. Рано осиротела, воспитывалась в приюте. Уже в детстве покоряла всех своим пением — брала силу в волжских просторах.</p>
+                    <p>В 1920-х начала профессиональную карьеру. Объездила всю страну, пела в госпиталях, на заводах, в полях. Во время Великой Отечественной дала тысячи концертов на передовой.</p>
+                </div>
+                <div class="bio-card">
+                    <h3>песни-странницы</h3>
+                    <ul class="song-list">
+                        <li>«Степь да степь кругом»</li>
+                        <li>«Липа вековая»</li>
+                        <li>«Я на горку шла»</li>
+                        <li>«Златые горы»</li>
+                        <li>«Окрасился месяц багрянцем»</li>
+                        <li>«Светит месяц»</li>
+                        <li>«Валенки»</li>
+                        <li>«Катюша» (первая исполнительница)</li>
+                        <li>«Саратовские припевки»</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- военная тема – особый блок -->
+            <div class="war-path">
+                <h3>⚔ дорогами войны</h3>
+                <p><strong>1941–1945:</strong> Русланова выступала перед бойцами от Бреста до Берлина. Её машина постоянно попадала под обстрелы. Она пела в плащ-палатке, в блиндажах, на броне. Концерт у стен Рейхстага стал легендой — пела для победителей прямо на ступенях. За мужество награждена орденом Отечественной войны II степени.</p>
+                <p style="margin-top: 1rem;">🎖 «За песню — как за патрон», — говорили солдаты. Она прошла с армией до конца, и голос её звучал как оружие и как утешение.</p>
+            </div>
+
+            <!-- особый дар — собирательство -->
+            <div class="gift-box">
+                <h3>🧺 собирательница жемчугов</h3>
+                <p>Русланова не просто исполняла — она <strong>собирала</strong> народные песни всю жизнь. Записывала от старух в деревнях, от рабочих, от бурлаков на Волге. Так в её репертуаре оказались редчайшие варианты «Степь да степь», старинные свадебные и протяжные. Она создала <em>свой стиль</em> — соединила подлинный фольклор с драматической подачей, сохранив душу каждой песни.</p>
+            </div>
+
+            <!-- наследие -->
+            <div class="legacy-box">
+                <h3>★ после жизни</h3>
+                <p>Имя Лидии Руслановой стало символом народного голоса России. Её пластинки расходились миллионными тиражами, а «Валенки» до сих пор ассоциируются с удалью и стойкостью. В Саратове её именем названы улица и конкурс вокалистов. Она похоронена на Новодевичьем кладбище, но песни её звучат повсюду, где помнят настоящую русскую душу.</p>
+            </div>
+
+            <!-- ссылка на главную страницу (заглушка) -->
+            <div class="back-link">
+                <a href="home.html">← ко всем женщинам Саратова</a>
+            </div>
+
+            <div class="footer-small">
+                <p>♬ страница, спетая на голос Руслановой • сохранено для потомков • 2026</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
